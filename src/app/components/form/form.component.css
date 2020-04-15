@@ -1,0 +1,57 @@
+@media only screen and (max-width: 600px) {
+  .center{
+    width: 100%;  margin-top: 10px;
+    margin-right: auto; margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .center{
+    width: 80%;  margin-top: 10px;
+    margin-right: auto; margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .center{
+    width: 60%;  margin-top: 10px;
+    margin-right: auto; margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .center{
+    width: 60%;  margin-top: 10px;
+    margin-right: auto; margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .center{
+    width: 60%;  margin-top: 10px;
+    margin-right: auto; margin-left: auto;
+  }
+}
+
+.formcontrols, mat-form-field {
+  width:100%;
+}
+
+.FormGroup{
+  margin-bottom:10px;
+}
+
+#end{
+  margin-bottom:20px;
+}
+mat-error{
+  font-size: .9em; font-style: italic;
+}
+label{
+  font-size: .95em;
+}
+button {
+  margin-right: 10px;
+}
+
+

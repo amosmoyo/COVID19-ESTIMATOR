@@ -1,0 +1,62 @@
+<mat-card>
+  <h2>Generated Report</h2>
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>Mild Impact</mat-panel-title>
+        <mat-panel-description>Report is {{panelOpenState ? 'Open': 'Closed'}}</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p><span>Currently Infected people: </span> {{impactObj?.currentlyInfected}}</p>
+      <p><span>Infected people as per time to elapse: </span>  {{impactObj?.infectionsByRequestedTime}}</p>
+      <p><span>Severe cases as per time to elapse: </span>{{impactObj?.severeCasesByRequestedTime}}</p>
+      <p><span>Addition hospital require for severe cases: </span>{{impactObj?.hospitalBedsByRequestedTime}}</p>
+      <p><span>People in ICU as per suggested time to elapse: </span>{{impactObj?.casesForICUByRequestedTime}}</p>
+      <p><span>Dollars In Flight as per suggested time to elapse: $</span>{{impactObj?.dollarsInFlight}}</p>
+
+      <div>
+        <h3>References</h3>
+        <p><a href="https://www.worldometers.info/world-population/africa-population/">worldometers.info</a></p>
+        <p><a href="https://blogs.worldbank.org/opendata/85-africans-live-less-550-day">blogs.worldbank.org</a></p>
+        <p>COVID-19 infections doubles every 3 days. Expect 50x (at least 10x) recported cases to be actual
+          number of infected people <a
+          href="https://medium.com/@Jason_Scott_Warner/the-sober-math-everyone-must-understand-about-the-pandemic-2b0145881993">- Jason S. Warner</a></p>
+      </div>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>Severe Impact</mat-panel-title>
+        <mat-panel-description>Report is {{panelOpenState ? 'Open': 'Closed'}}</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <h3>Severe </h3>
+
+      <p>
+        According to Harvard Medical School / Massachusetts General Hospital (see the references at the end of
+        this guide), there are likely up to 50x more people infected than known reported cases, based on this information it probable that
+        as per the estimate time to say that situation would be worse.
+      </p>
+
+      <p><span>Currently Infected people: </span> {{severeObj?.currentlyInfected}}</p>
+      <p><span>Infected people as per time to elapse: </span>  {{severeObj?.infectionsByRequestedTime}}</p>
+      <p><span>Severe cases as per time to elapse: </span> {{severeObj?.severeCasesByRequestedTime}}</p>
+      <p><span>Addition hospital require for severe cases: </span> {{severeObj?.hospitalBedsByRequestedTime}}</p>
+      <p><span>People in ICU as per suggested time to elapse: </span> {{severeObj?.casesForICUByRequestedTime}}</p>
+      <p><span>Dollars In Flight as per suggested time to elapse: </span> ${{severeObj?.dollarsInFlight}}</p>
+
+      <div>
+        <h3>References</h3>
+        <p><a href="https://www.worldometers.info/world-population/africa-population/">worldometers.info</a></p>
+        <p><a href="https://blogs.worldbank.org/opendata/85-africans-live-less-550-day">blogs.worldbank.org</a></p>
+        <p>COVID-19 infections doubles every 3 days. Expect 50x (at least 10x) recported cases to be actual
+          number of infected people <a
+          href="https://medium.com/@Jason_Scott_Warner/the-sober-math-everyone-must-understand-about-the-pandemic-2b0145881993">- Jason S. Warner</a></p>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

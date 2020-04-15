@@ -1,0 +1,187 @@
+<div  class="center">
+
+  <div>
+    <div >
+      <form autocomplete="off" novalidate #postForm = "ngForm" (ngSubmit)='onsubmit(postForm)'>
+        <div ngModelGroup="region">
+         <br>
+          <mat-form-field class="FormGroup">
+            <mat-label for="regionName">Region Name</mat-label>
+            <input type="text"
+                   ngModel
+                   name="regionName"
+                   matInput
+                   #region = "ngModel"
+                   class="formcontrols"
+                   required
+                   data-regionNama
+            >
+            <mat-error *ngIf="region.invalid && (region.dirty || region.touched)">
+              <mat-error *ngIf="region.errors.required">
+                name is required.
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="FormGroup">
+            <mat-label for="avgAge">Avarage Age</mat-label>
+            <input type="number"
+                  ngModel
+                  name="avgAge"
+                  matInput
+                  class="formcontrols"
+                  #avgAgee = "ngModel"
+                  required
+                  data-avgAge
+            />
+            <mat-error *ngIf="avgAgee.invalid && (avgAgee.dirty || avgAgee.touched)">
+              <mat-error *ngIf="avgAgee.errors.required">
+                average age is required.
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="FormGroup">
+            <mat-label for="avgDailyIncomeInUSD">Avarage Daily Income in $</mat-label>
+            <input type="number"
+                  ngModel
+                  name="avgDailyIncomeInUSD"
+                  matInput
+                  class="formcontrols"
+                  #avgDailyIncomeInUSDD = "ngModel"
+                  required
+                  data-avgDailyIncomeInUSD
+            />
+            <mat-error *ngIf="avgDailyIncomeInUSDD.invalid && (avgDailyIncomeInUSDD.dirty || avgDailyIncomeInUSDD.touched)">
+              <mat-error *ngIf="avgDailyIncomeInUSDD.errors.required">
+                average daily income is required.
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="FormGroup">
+            <mat-label for="avgDailyIncomePopulation">Avarage Daily Income of the Population</mat-label>
+            <input type="number"
+                   ngModel
+                   name="avgDailyIncomePopulation"
+                   matInput
+                   #avgDailyIncomePopulationn = 'ngModel'
+                   class="formcontrols"
+                   required
+                   data-avgDailyIncomePopulation
+            />
+            <mat-error *ngIf="avgDailyIncomePopulationn.invalid && (avgDailyIncomePopulationn.dirty || avgDailyIncomePopulationn.touched)">
+              <mat-error *ngIf="avgDailyIncomePopulationn.errors.required">
+                avarage daily income of the population is required
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="FormGroup" id="end">
+          <mat-label for="periodType">Period Type</mat-label>
+          <mat-select     ngModel
+                      name="periodType"
+                      class="formcontrols"
+                      data-period-type
+                      #periodType = "ngModel"
+                      id="periodType"
+          >
+            <mat-option value="days"   aria-selected="false">Days</mat-option>
+            <mat-option value="weeks"  aria-selected="false">Weeks</mat-option>
+            <mat-option value="months" aria-selected="false">Months</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="FormGroup">
+          <mat-label for="timeToElapse">Time to elapse as per periodType</mat-label><br>
+          <input type="number"
+                 ngModel
+                 name="timeToElapse"
+                 matInput
+                 #timeToElapsee = "ngModel"
+                 class="formcontrols"
+                 required
+                 data-time-to-elapse
+          />
+          <mat-error *ngIf="timeToElapsee.invalid && (timeToElapsee.dirty || timeToElapsee.touched)">
+            <mat-error *ngIf="timeToElapsee.errors.required">
+              time to elapsee age is required.
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="FormGroup">
+          <mat-label for="reportedCases">What are reported estimated cases?</mat-label>
+          <input type="number"
+                 ngModel
+                 name="reportedCases"
+                 matInput
+                 #reportedCasess = "ngModel"
+                 class="formcontrols"
+                 data-reported-cases
+          />
+          <mat-error *ngIf="timeToElapsee.invalid && (timeToElapsee.dirty || timeToElapsee.touched)">
+            <mat-error *ngIf="timeToElapsee.errors.required">
+              the number of reported cases is required.
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="FormGroup">
+          <mat-label for="population">Whats the overroll population?</mat-label>
+          <input type="number"
+                 ngModel
+                 name="population"
+                 matInput
+                 #populationn = "ngModel"
+                 required
+                 class="formcontrols"
+                 data-population
+          />
+          <mat-error *ngIf="populationn.invalid && (populationn.dirty || populationn.touched)">
+            <mat-error *ngIf="populationn.errors.required">
+              the total population is required.
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="FormGroup">
+          <mat-label for="totalHospitalBeds">Total hostital beds</mat-label>
+          <input type="number"
+                 ngModel
+                 name="totalHospitalBeds"
+                 matInput
+                 #totalHospitalBedss = "ngModel"
+                 required
+                 class="formcontrols"
+                 data-total-hospital-beds
+          />
+          <mat-error *ngIf="totalHospitalBedss.invalid && (totalHospitalBedss.dirty || totalHospitalBedss.touched)">
+            <mat-error *ngIf="totalHospitalBedss.errors.required">
+              total hospital beds is required.
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <button type="submit"
+                mat-raised-button
+                color="primary"
+                [disabled] = "postForm.invalid || postForm.pristine"
+                data-go-estimate
+        >Save</button>
+
+        <button type="button"
+                mat-raised-button
+                (click)="postForm.resetForm({})"
+        >Cancel</button>
+      </form>
+    </div>
+    <br>
+    <app-report *ngIf="state && !!impactObject" [inputInf] = "impactObject"></app-report>
+    <br>
+  </div>
+</div>
+
+
