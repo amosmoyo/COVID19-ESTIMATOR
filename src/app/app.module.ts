@@ -11,7 +11,6 @@ import { FormComponent } from './components/form/form.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReportComponent } from './components/report/report.component';
-import { ErrorsComponent } from './components/errors/errors.component';
 
 
 @NgModule({
@@ -20,8 +19,7 @@ import { ErrorsComponent } from './components/errors/errors.component';
     FormComponent,
     NavbarComponent,
     FooterComponent,
-    ReportComponent,
-    ErrorsComponent
+    ReportComponent
   ],
   imports: [
     BrowserModule,
