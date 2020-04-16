@@ -1,12 +1,7 @@
-@media only screen and (max-width: 280px ){
-  h1{
-    font-size: 1.1em;
-  }
-}
 @media only screen and (max-width: 600px) {
   .img{
     width: 100%;
-    background-color: rgb(6, 255, 243);
+    background-color: rgb(250, 8, 121);
   }
   .child-p{
     padding-top: 10px;
@@ -81,15 +76,15 @@
   }
 }
 .child{
-  background-color: rgb(6, 255, 243);
-  color: #222; text-align: center;
-  font-family:serif;
+  background-color: rgb(255, 6, 131);
+  color: #ffffff; text-align: center;
+  font-family:serif; padding: 3px; border-radius: 5px;
   margin-top: 0px;
 }
 
 h1{
-  color: #222;
-  text-shadow: 2px 2px rgb(21, 207, 176);
+  color: rgb(255, 6, 131);
+  text-shadow: 2px 2px #555;
   margin-bottom:0px;
 }
 .main{
