@@ -6,7 +6,7 @@
         <div ngModelGroup="region">
          <br>
           <mat-form-field class="FormGroup">
-            <mat-label for="regionName">Region Name</mat-label>
+            <mat-label for="regionName">region name</mat-label>
             <input type="text"
                    ngModel
                    name="regionName"
@@ -24,7 +24,7 @@
           </mat-form-field>
 
           <mat-form-field class="FormGroup">
-            <mat-label for="avgAge">Avarage Age</mat-label>
+            <mat-label for="avgAge">average age of the population</mat-label>
             <input type="number"
                   ngModel
                   name="avgAge"
@@ -42,7 +42,7 @@
           </mat-form-field>
 
           <mat-form-field class="FormGroup">
-            <mat-label for="avgDailyIncomeInUSD">Avarage Daily Income in $</mat-label>
+            <mat-label for="avgDailyIncomeInUSD">avarage daily income in $</mat-label>
             <input type="number"
                   ngModel
                   name="avgDailyIncomeInUSD"
@@ -60,8 +60,8 @@
           </mat-form-field>
 
           <mat-form-field class="FormGroup">
-            <mat-label for="avgDailyIncomePopulation">Avarage Daily Income of the Population</mat-label>
-            <input type="number"
+            <mat-label for="avgDailyIncomePopulation">in the ratio 0.1 to 1.0 how many earn daily.</mat-label>
+            <mat-select type="number"
                    ngModel
                    name="avgDailyIncomePopulation"
                    matInput
@@ -69,7 +69,18 @@
                    class="formcontrols"
                    required
                    data-avgDailyIncomePopulation
-            />
+            >
+               <mat-option value="0.1">0.10</mat-option>
+               <mat-option value="0.2">0.20</mat-option>
+               <mat-option value="0.3">0.30</mat-option>
+               <mat-option value="0.4">0.40</mat-option>
+               <mat-option value="0.5">0.50</mat-option>
+               <mat-option value="0.6">0.60</mat-option>
+               <mat-option value="0.7">0.70</mat-option>
+               <mat-option value="0.8">0.80</mat-option>
+               <mat-option value="0.9">0.90</mat-option>
+               <mat-option value="1.0">1.00</mat-option>
+            </mat-select>
             <mat-error *ngIf="avgDailyIncomePopulationn.invalid && (avgDailyIncomePopulationn.dirty || avgDailyIncomePopulationn.touched)">
               <mat-error *ngIf="avgDailyIncomePopulationn.errors.required">
                 avarage daily income of the population is required
@@ -79,7 +90,7 @@
         </div>
 
         <mat-form-field class="FormGroup" id="end">
-          <mat-label for="periodType">Period Type</mat-label>
+          <mat-label for="periodType">duration for the situaltion end?</mat-label>
           <mat-select     ngModel
                       name="periodType"
                       class="formcontrols"
@@ -95,7 +106,7 @@
         </mat-form-field>
 
         <mat-form-field class="FormGroup">
-          <mat-label for="timeToElapse">Time to elapse as per periodType</mat-label><br>
+          <mat-label for="timeToElapse">specify the actual, days, weeks or months?</mat-label><br>
           <input type="number"
                  ngModel
                  name="timeToElapse"
@@ -113,7 +124,7 @@
         </mat-form-field>
 
         <mat-form-field class="FormGroup">
-          <mat-label for="reportedCases">What are reported estimated cases?</mat-label>
+          <mat-label for="reportedCases">reported cases of COVID19 in the region?</mat-label>
           <input type="number"
                  ngModel
                  name="reportedCases"
@@ -130,7 +141,7 @@
         </mat-form-field>
 
         <mat-form-field class="FormGroup">
-          <mat-label for="population">Whats the overroll population?</mat-label>
+          <mat-label for="population">whats is the estimate population in the region?</mat-label>
           <input type="number"
                  ngModel
                  name="population"
@@ -148,7 +159,7 @@
         </mat-form-field>
 
         <mat-form-field class="FormGroup">
-          <mat-label for="totalHospitalBeds">Total hostital beds</mat-label>
+          <mat-label for="totalHospitalBeds">total hostital beds in the region?</mat-label>
           <input type="number"
                  ngModel
                  name="totalHospitalBeds"

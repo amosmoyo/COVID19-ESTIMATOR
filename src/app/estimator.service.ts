@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Objects } from './objects';
+import { Subject } from 'rxjs';
+import { IInput, IInput2 } from './input';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstimatorService {
-  severeImpact: object;
-  impact: object;
-  input2;
-  state = false;
-
-  generalObj;
+  severeImpact: IInput2;
+  impact: IInput2;
 
   constructor() { }
 
@@ -48,7 +45,7 @@ export class EstimatorService {
     return Math.trunc((infected * pop * income) / (day));
   }
 
-  impactEstimator(val) {
+  impactEstimator(val: IInput) {
     const currentlyInfected = val.reportedCases * 10;
     const  infectionsByRequestedTime = currentlyInfected * this.days(
       val.periodType, val.timeToElapse
@@ -62,12 +59,12 @@ export class EstimatorService {
     const dollarsInFlight = this.incomeLost(
       infectionsByRequestedTime,
       val.region.avgDailyIncomeInUSD,
-      val.region.avgDailyIncomePopulation,
+      +val.region.avgDailyIncomePopulation,
       val.timeToElapse,
       val.periodType
     );
 
-    const impact  = new Objects(
+    this.impact  = {
       currentlyInfected,
       infectionsByRequestedTime,
       severeCasesByRequestedTime,
@@ -75,52 +72,39 @@ export class EstimatorService {
       casesForICUByRequestedTime,
       casesForVentilatorsByRequestedTime,
       dollarsInFlight
-    );
+    };
 
-    return impact;
+    return this.impact;
   }
 
-  severeImpactEstimator(val) {
-    const currentlyInfected = val.reportedCases * 50;
-    const  infectionsByRequestedTime = currentlyInfected * this.days(
+  severeImpactEstimator(val: IInput) {
+    const currentlyInfectedd = val.reportedCases * 50;
+    const  infectionsByRequestedTimee = currentlyInfectedd * this.days(
       val.periodType, val.timeToElapse
     );
-    const severeCasesByRequestedTime = Math.trunc(0.15 * infectionsByRequestedTime);
-    const hospitalBedsByRequestedTime = this.hospitalBeds(
-      severeCasesByRequestedTime, val.totalHospitalBeds
+    const severeCasesByRequestedTimee = Math.trunc(0.15 * infectionsByRequestedTimee);
+    const hospitalBedsByRequestedTimee = this.hospitalBeds(
+      severeCasesByRequestedTimee, val.totalHospitalBeds
     );
-    const casesForICUByRequestedTime = Math.trunc(0.05 * infectionsByRequestedTime);
-    const casesForVentilatorsByRequestedTime = Math.trunc(0.02 * infectionsByRequestedTime);
-    const dollarsInFlight = this.incomeLost(
-      infectionsByRequestedTime,
+    const casesForICUByRequestedTimee = Math.trunc(0.05 * infectionsByRequestedTimee);
+    const casesForVentilatorsByRequestedTimee = Math.trunc(0.02 * infectionsByRequestedTimee);
+    const dollarsInFlightt = this.incomeLost(
+      infectionsByRequestedTimee,
       val.region.avgDailyIncomeInUSD,
-      val.region.avgDailyIncomePopulation,
+      +val.region.avgDailyIncomePopulation,
       val.timeToElapse,
       val.periodType
     );
+    this.severeImpact  = {
+      currentlyInfected: currentlyInfectedd,
+      infectionsByRequestedTime: infectionsByRequestedTimee,
+      severeCasesByRequestedTime: severeCasesByRequestedTimee,
+      hospitalBedsByRequestedTime: hospitalBedsByRequestedTimee,
+      casesForICUByRequestedTime: casesForICUByRequestedTimee,
+      casesForVentilatorsByRequestedTime: casesForVentilatorsByRequestedTimee,
+      dollarsInFlight: dollarsInFlightt
+    };
 
-    const severeImpact  = new Objects(
-      currentlyInfected,
-      infectionsByRequestedTime,
-      severeCasesByRequestedTime,
-      hospitalBedsByRequestedTime,
-      casesForICUByRequestedTime,
-      casesForVentilatorsByRequestedTime,
-      dollarsInFlight
-    );
-
-    return severeImpact;
-  }
-
-  covid19ImpactEstimator(data: object) {
-    if (data) {
-      console.log('amos', data);
-      this.state = true;
-      return {
-        dataa: data,
-        impact: this.impactEstimator(data),
-        severeImpact: this.severeImpactEstimator(data)
-      };
-    }
+    return this.severeImpact;
   }
 }

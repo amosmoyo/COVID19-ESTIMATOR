@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EstimatorService } from 'src/app/estimator.service';
+import { IInput, IInput2 } from 'src/app/input';
 
 @Component({
   selector: 'app-report',
@@ -8,18 +9,16 @@ import { EstimatorService } from 'src/app/estimator.service';
 })
 export class ReportComponent implements OnInit {
   panelOpenState = false;
-  @Input() inputInf: object;
-  impactObj: object;
-  severeObj: object;
+  @Input() inputInf: IInput;
+  impactObj: IInput2;
+  severeObj: IInput2;
 
   constructor(private objImpact: EstimatorService) { }
 
   ngOnInit() {
     if (this.inputInf) {
       this.impactObj = this.objImpact.impactEstimator(this.inputInf);
-      console.log(this.impactObj);
       this.severeObj = this.objImpact.severeImpactEstimator(this.inputInf);
-      console.log(this.severeObj);
     }
 
   }
