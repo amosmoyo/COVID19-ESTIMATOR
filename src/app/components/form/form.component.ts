@@ -36,7 +36,7 @@ export class FormComponent implements OnInit {
     formvalue.resetForm();
 
     setTimeout(() => {
-      this.route.navigate(['/home/report']);
+      this.route.navigate(['/report']);
     }, 1000);
   }
 }

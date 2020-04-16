@@ -27,9 +27,9 @@ import { ReportComponent } from './components/report/report.component';
     MaterialModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      {path: 'home', component: FormComponent},
-      {path: 'home/report', component: ReportComponent},
-      {path: '', redirectTo: 'home', pathMatch: 'full'}
+      {path: '', component: FormComponent},
+      {path: 'report', component: ReportComponent},
+      {path: '***', redirectTo: '', pathMatch: 'full'}
     ])
   ],
   providers: [],
