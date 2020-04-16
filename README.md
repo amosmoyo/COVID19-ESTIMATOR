@@ -1,10 +1,13 @@
 # Angular5
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+COVID19-ESTIMATOR is a simple project that is--- created to collect information and provide reports on the impact of
+covid19 to the society.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Project Developed by Amos Moyo... Contact +254710510906
 
 ## Code scaffolding
 
