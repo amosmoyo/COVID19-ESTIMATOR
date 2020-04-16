@@ -5,11 +5,25 @@
   <title>CROMO-ESTIMATOR</title>
   <base href="https://amosmoyo.github.io/COVID19-ESTIMATOR/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Covid19 Estimator--Help us in taking the survay...">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="styles.e63f547112085b7ac744.css"></head>
 <body class="container">
+  <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
   <app-root></app-root>
 <script src="runtime-es2015.858f8dd898b75fe86926.js" type="module"></script><script src="polyfills-es2015.27661dfa98f6332c27dc.js" type="module"></script><script src="runtime-es5.741402d1d47331ce975c.js" nomodule></script><script src="polyfills-es5.4e06eb653a3c8a2d581f.js" nomodule></script><script src="scripts.2810f838b753a954d247.js"></script><script src="main-es2015.70772119aca7cbccc93a.js" type="module"></script><script src="main-es5.bf51e8bedb5a3384344f.js" nomodule></script></body>
 </html>
