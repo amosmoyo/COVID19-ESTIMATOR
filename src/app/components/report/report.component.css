@@ -1,9 +1,26 @@
 span{
-  color:red;
-}
+  color:#ffffff;
+  background-color: rgb(216, 25, 99)!important;
 
+}
+.paras{
+  background-color: rgb(6, 22, 247) !important;
+  color: #ffffff !important;
+  font-weight: bold;
+}
 a{
   text-decoration: none;
   color: blue;
   font-weight: bold;
+}
+mat-card{
+  margin-bottom:100px;
+}
+
+.h3{
+  color: rgb(247, 7, 99);
+}
+h5{
+  color: #222;
+  text-decoration: underline;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { EstimatorService } from 'src/app/estimator.service';
 import { ToastrService } from 'src/app/toastr.service';
 import { IInput } from 'src/app/input';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -10,13 +11,13 @@ import { IInput } from 'src/app/input';
 })
 export class FormComponent implements OnInit {
   new;
-  impactObject: IInput;
-  state = false;
-  message = 'Hello! a report has been generated for you';
+  message = 'Thank you!. A report has been generated for you';
+  inputObject: IInput;
 
   constructor(
     private service: EstimatorService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private route: Router
   ) { }
 
   ngOnInit() {
@@ -28,10 +29,14 @@ export class FormComponent implements OnInit {
     }
 
     if ( !!formvalue.value ) {
-      this.state = true;
-      this.impactObject = formvalue.value;
+      this.inputObject = formvalue.value;
+      this.service.covid19Estimator(this.inputObject);
       this.toastr.success(this.message);
     }
     formvalue.resetForm();
+
+    setTimeout(() => {
+      this.route.navigate(['/home/report']);
+    }, 1000);
   }
 }

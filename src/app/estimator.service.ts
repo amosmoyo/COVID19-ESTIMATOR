@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IInput, IInput2 } from './input';
 
@@ -8,6 +8,7 @@ import { IInput, IInput2 } from './input';
 export class EstimatorService {
   severeImpact: IInput2;
   impact: IInput2;
+  outputObject: IInput;
 
   constructor() { }
 
@@ -106,5 +107,14 @@ export class EstimatorService {
     };
 
     return this.severeImpact;
+  }
+
+  covid19Estimator(data: IInput) {
+    if (data) {
+      this.outputObject = data;
+    }
+  }
+  output() {
+    return this.outputObject;
   }
 }

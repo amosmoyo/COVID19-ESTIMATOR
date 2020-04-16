@@ -1,5 +1,5 @@
 <mat-card>
-  <h2>Generated Report</h2>
+  <h3 class="h3">Generated reports</h3>
   <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
 
@@ -8,15 +8,15 @@
         <mat-panel-description>Report is {{panelOpenState ? 'Open': 'Closed'}}</mat-panel-description>
       </mat-expansion-panel-header>
 
-      <p><span>Currently Infected people: </span> {{impactObj?.currentlyInfected}}</p>
-      <p><span>Infected people as per time to elapse: </span>  {{impactObj?.infectionsByRequestedTime}}</p>
-      <p><span>Severe cases as per time to elapse: </span>{{impactObj?.severeCasesByRequestedTime}}</p>
-      <p><span>Addition hospital bed required for severe cases: </span>{{impactObj?.hospitalBedsByRequestedTime}}</p>
-      <p><span>People in ICU as per suggested time to elapse: </span>{{impactObj?.casesForICUByRequestedTime}}</p>
-      <p><span>Dollars In Flight as per suggested time to elapse: $</span>{{impactObj?.dollarsInFlight}}</p>
+      <p ><span>Currently Infected people:</span><span class="paras"> {{impactObj?.currentlyInfected}}</span></p>
+      <p><span>Infected people as per time to elapse:</span><span class="paras">  {{impactObj?.infectionsByRequestedTime}}</span></p>
+      <p><span>Severe cases as per time to elapse:</span><span class="paras"> {{impactObj?.severeCasesByRequestedTime}}</span></p>
+      <p><span>Addition hospital bed required for severe cases:</span><span class="paras">{{impactObj?.hospitalBedsByRequestedTime}}</span></p>
+      <p><span>People in ICU as per suggested time to elapse:</span><span class="paras"> {{impactObj?.casesForICUByRequestedTime}}</span></p>
+      <p><span>Dollars In Flight as per suggested time to elapse:</span><span class="paras"> ${{impactObj?.dollarsInFlight}}</span></p>
 
       <div>
-        <h3>References</h3>
+        <h5>References</h5>
         <p><a href="https://www.worldometers.info/world-population/africa-population/">worldometers.info</a></p>
         <p><a href="https://blogs.worldbank.org/opendata/85-africans-live-less-550-day">blogs.worldbank.org</a></p>
         <p>COVID-19 infections doubles every 3 days. Expect 50x (at least 10x) reported cases to be actual
@@ -41,15 +41,15 @@
         as per the estimate time to say that situation would be worse.
       </p>
 
-      <p><span>Currently Infected people: </span> {{severeObj?.currentlyInfected}}</p>
-      <p><span>Infected people as per time to elapse: </span>  {{severeObj?.infectionsByRequestedTime}}</p>
-      <p><span>Severe cases as per time to elapse: </span> {{severeObj?.severeCasesByRequestedTime}}</p>
-      <p><span>Addition hospital require for severe cases: </span> {{severeObj?.hospitalBedsByRequestedTime}}</p>
-      <p><span>People in ICU as per suggested time to elapse: </span> {{severeObj?.casesForICUByRequestedTime}}</p>
-      <p><span>Dollars In Flight as per suggested time to elapse: </span> ${{severeObj?.dollarsInFlight}}</p>
+      <p><span>Currently Infected people:</span> <span class="paras"> {{severeObj?.currentlyInfected}}</span></p>
+      <p><span>Infected people as per time to elapse:</span><span class="paras">  {{severeObj?.infectionsByRequestedTime}}</span></p>
+      <p><span>Severe cases as per time to elapse:</span><span class="paras"> {{severeObj?.severeCasesByRequestedTime}}</span></p>
+      <p><span>Addition hospital require for severe cases:</span><span class="paras"> {{severeObj?.hospitalBedsByRequestedTime}}</span></p>
+      <p><span>People in ICU as per suggested time to elapse:</span><span class="paras"> {{severeObj?.casesForICUByRequestedTime}}</span></p>
+      <p><span>Dollars In Flight as per suggested time to elapse:</span><span class="paras"> ${{severeObj?.dollarsInFlight}}</span></p>
 
       <div>
-        <h3>References</h3>
+        <h5>References</h5>
         <p><a href="https://www.worldometers.info/world-population/africa-population/">worldometers.info</a></p>
         <p><a href="https://blogs.worldbank.org/opendata/85-africans-live-less-550-day">blogs.worldbank.org</a></p>
         <p>COVID-19 infections doubles every 3 days. Expect 50x (at least 10x) reported cases to be actual
@@ -59,4 +59,9 @@
 
     </mat-expansion-panel>
   </mat-accordion>
+  <br>
+  <button mat-raised-button color="accent">Thank you...</button>
+  <br>
+  <br>
+  <button mat-raised-button color="accent" [routerLink]="['/home']">take another survey...</button>
 </mat-card>

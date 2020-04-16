@@ -9,13 +9,14 @@ import { IInput, IInput2 } from 'src/app/input';
 })
 export class ReportComponent implements OnInit {
   panelOpenState = false;
-  @Input() inputInf: IInput;
+  inputInf: IInput;
   impactObj: IInput2;
   severeObj: IInput2;
 
   constructor(private objImpact: EstimatorService) { }
 
   ngOnInit() {
+    this.inputInf = this.objImpact.output();
     if (this.inputInf) {
       this.impactObj = this.objImpact.impactEstimator(this.inputInf);
       this.severeObj = this.objImpact.severeImpactEstimator(this.inputInf);

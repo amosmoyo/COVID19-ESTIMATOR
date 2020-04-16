@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './materials/material/material.module';
@@ -24,7 +25,12 @@ import { ReportComponent } from './components/report/report.component';
     BrowserModule,
     FormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      {path: 'home', component: FormComponent},
+      {path: 'home/report', component: ReportComponent},
+      {path: '', redirectTo: 'home', pathMatch: 'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
