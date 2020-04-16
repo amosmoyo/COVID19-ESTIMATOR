@@ -1,3 +1,42 @@
+@media only screen and (max-width: 600px) {
+  mat-card{
+    width: 100%;  margin-top: 50px;
+    margin-right: auto; margin-left: auto;
+    margin-bottom:100px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  mat-card{
+    width: 80%;  margin-top: 50px;
+    margin-right: auto; margin-left: auto;
+    margin-bottom:100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  mat-cardr{
+    width: 60%;  margin-top: 50px;
+    margin-right: auto; margin-left: auto;
+    margin-bottom:100px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  mat-card{
+    width: 60%;  margin-top: 50px;
+    margin-right: auto; margin-left: auto;
+    margin-bottom:100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  mat-card{
+    width: 60%;  margin-top: 50px;
+    margin-right: auto; margin-left: auto;
+    margin-bottom:100px;
+  }
+}
 span{
   color:#ffffff;
   background-color: rgb(216, 25, 99)!important;
@@ -12,9 +51,6 @@ a{
   text-decoration: none;
   color: blue;
   font-weight: bold;
-}
-mat-card{
-  margin-bottom:100px;
 }
 
 .h3{
